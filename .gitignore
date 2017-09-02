@@ -1,0 +1,6 @@
+composer.lock
+composer.phar
+vendor/*
+files/maxmind/GeoLite2-City.mmdb
+files/maxmind/LICENSE.txt
+files/maxmind/COPYRIGHT.txt
