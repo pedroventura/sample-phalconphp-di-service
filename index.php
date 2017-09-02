@@ -16,7 +16,7 @@ require_once __DIR__ . '/vendor/autoload.php';
 // incluimos nuestro fichero de servicios ad-hoc
 require_once __DIR__ . '/config/services.php';
 
-// seteamos el inyector de dependenciasa la aplicación
+// seteamos el inyector de dependencias la aplicación
 $app->setDI($di);
 
 // recuperamos las llamadas a la URL base y las entregamos vacías
