@@ -38,7 +38,7 @@ $app->get('/testIp', function() use($app) {
 	
 	$app->response->setStatusCode(200)->setContent(json_encode(array(
 		'ipUser' => $ipUsuario,
-		'countryCode' => $countryCode))
+		'geoData' => $countryCode))
 	);
 	$app->response->sendHeaders()->send();
 	
