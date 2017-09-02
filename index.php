@@ -30,7 +30,7 @@ $app->get('/', function() use($app) {
 $app->get('/testIp', function() use($app) {
 
 	$ipUsuario = $app->di->get('ipUsuario');
-	$countryCode = $app->di->get('getCountyCode', [$ipUsuario]);
+	$countryCode = $app->di->get('getGEO', [$ipUsuario]);
 
 	$app->response->setContentType('application/json', 'UTF-8')
 	->setHeader('Access-Control-Allow-Origin', '*')

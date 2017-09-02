@@ -6,12 +6,19 @@ use GeoIp2\Database\Reader;
 /**
 * Servicio para recuperar el country code de una ip 
 */
-$di->set('getCountyCode', function($ip) use ($app) {
+$di->set('getGEO', function($ip) use ($app) {
 	if (!empty($ip)) {
 		$reader = new Reader(PATH_BASE . '/files/maxmind/GeoLite2-City.mmdb');
 		$record = $reader->city($ip);
-		$countryCode = $record->country->isoCode;
-		return $countryCode;
+		$res = array(
+			'countryCode' => $record->country->isoCode,
+			'city' => $record->city->names['es'],
+			'location' => array(
+				'latitud' => $record->location->latitude,
+				'longitud' => $record->location->longitude,
+				'timeZone' => $record->location->timeZone)
+			);
+		return $res;
 	}
 	return false;
 });
