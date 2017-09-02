@@ -25,7 +25,8 @@ $app->get('/', function() use($app) {
 	// podemos incluir una cabecera 204
 });
 
-// petición para comprobación desde CDN
+// petición [GET] para obtener datos GEO de usuario. 
+// código demos para demostración uso inyector de servicios
 $app->get('/testIp', function() use($app) {
 
 	$ipUsuario = $app->di->get('ipUsuario');
